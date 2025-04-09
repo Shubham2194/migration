@@ -19,3 +19,21 @@ Try accessing GCP from ssh -i <pem path> name@PublicIP_GCP_VM
 
 Step 5:
 Move to AWS and access AWS Migration Service
+
+
+<img width="1460" alt="image" src="https://github.com/user-attachments/assets/01110e24-a369-4a9b-bd29-80dbd863ed2b" />
+
+
+Step 6:
+Check replication and launch template according to you requirements 
+
+I am using default for everything for my POC
+
+<img width="1099" alt="image" src="https://github.com/user-attachments/assets/991f3329-45f5-4cf7-beff-087628cfdc46" />
+
+
+In lauch template i uncheck General launch settings > Activate instance type right-sizing and choose t3.medium and save template
+
+<img width="1299" alt="image" src="https://github.com/user-attachments/assets/8a5cf6bc-83e5-4dc1-8951-f4f768690044" />
+
+
