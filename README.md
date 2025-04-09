@@ -37,3 +37,13 @@ In lauch template i uncheck General launch settings > Activate instance type rig
 <img width="1299" alt="image" src="https://github.com/user-attachments/assets/8a5cf6bc-83e5-4dc1-8951-f4f768690044" />
 
 
+Step 7:
+Check Post-launch template  and enable Install the Systems Manager agent and allow executing actions on launched servers if you are Prod
+
+(i have disabled it as i will access it with SSH using Public key)
+
+
+<img width="1581" alt="image" src="https://github.com/user-attachments/assets/9538f36a-7df2-4247-8097-f644756ed168" />
+
+
+
