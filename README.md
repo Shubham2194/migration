@@ -1,7 +1,12 @@
-# migration of GCP VM to AWS using AWS Migration Service
+###### Migration of GCP VM to AWS using AWS Migration Service ###################################################
+###########################################################################################################
+
+<img width="761" alt="image" src="https://github.com/user-attachments/assets/dffdb4ae-00b9-495a-935a-cf61f7b8e322" />
+
 
 Step 1:
-Create Public key on local putty gen , keygen multiple options
+Create ssh keys Public key and Private key on your local(using putty gen , ssh-keygen)
+
 
 Step 2: 
 Add Public key in GCP VM and Save Private in your local
