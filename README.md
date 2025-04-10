@@ -64,7 +64,6 @@ Now we need to run the below commands one by one in GCP VM
 sudo wget -O ./aws-replication-installer-init https://aws-application-migration-service-ap-southeast-1.s3.ap-southeast-1.amazonaws.com/latest/linux/aws-replication-installer-init
 sudo chmod +x aws-replication-installer-init; sudo ./aws-replication-installer-init --region ap-southeast-1 --aws-access-key-id <your_access_key> --aws-secret-access-key <your_secret_key> --no-prompt
 
-![Uploading image.png…]()
 
 
 
