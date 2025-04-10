@@ -50,13 +50,13 @@ Step 8:
 Now go to IAM and create IAM user with access key and secret access key
 (Attach permission : AWSApplicationMigrationAgentinstallationPolicy)
 
-<img width="1208" alt="image" src="https://github.com/user-attachments/assets/d35b1c3e-18e7-4e04-88b0-4e8a3db05ca6" />
+
 
 Step 9:
 Once create go to AWS migration and add access secret keys
 
-<img width="1667" alt="image" src="https://github.com/user-attachments/assets/c3c527c0-df5d-4c40-bf59-f3eebe8aee27" />
 
+<img width="1208" alt="image" src="https://github.com/user-attachments/assets/d35b1c3e-18e7-4e04-88b0-4e8a3db05ca6" />
 
 Step 10:
 Now we need to run the below commands one by one in GCP VM
@@ -66,5 +66,5 @@ sudo chmod +x aws-replication-installer-init; sudo ./aws-replication-installer-i
 
 
 
-
+<img width="1667" alt="image" src="https://github.com/user-attachments/assets/c3c527c0-df5d-4c40-bf59-f3eebe8aee27" />
 
