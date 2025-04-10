@@ -109,11 +109,22 @@ Once you see Initial replication finished
 <img width="1667" alt="image" src="https://github.com/user-attachments/assets/a1acc6d3-4371-4247-8168-9fa994dae091" />
 
 Step 15:
-Now click on test and cutover , it will create a test server 
+Now click on test and cutover , it will create a test server (this server is to test if everything is as expected in sever )
 
 <img width="1397" alt="image" src="https://github.com/user-attachments/assets/5e7e3854-45cf-4e81-8762-d1ceaaca0319" />
 
 Step 16:
+Once you are sure , click on (Mark as Ready for Cutover) - this will remove test ec2
+
+<img width="1382" alt="image" src="https://github.com/user-attachments/assets/a6efd78f-6cea-454a-a189-fe27042a8bcf" />
+
+Step 17:
+Once this is terminated go to AWS mgn and click on Launch cutover instance. (this will again launch a server and we can test that, this time let's attach eip to this server and SSH to it)
+
+<img width="1409" alt="image" src="https://github.com/user-attachments/assets/242e0247-91d3-4d60-8cf3-26d3311371a4" />
+
+<img width="1384" alt="image" src="https://github.com/user-attachments/assets/0299e396-0aed-4293-bffa-4175c790ac87" />
+
 
 
 
