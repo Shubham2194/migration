@@ -55,11 +55,17 @@ Now go to IAM and create IAM user with access key and secret access key
 Step 9:
 Once create go to AWS migration and add access secret keys
 
+<img width="1667" alt="image" src="https://github.com/user-attachments/assets/c3c527c0-df5d-4c40-bf59-f3eebe8aee27" />
+
+
+Step 10:
+Now we need to run the below commands one by one in GCP VM
+
+sudo wget -O ./aws-replication-installer-init https://aws-application-migration-service-ap-southeast-1.s3.ap-southeast-1.amazonaws.com/latest/linux/aws-replication-installer-init
+sudo chmod +x aws-replication-installer-init; sudo ./aws-replication-installer-init --region ap-southeast-1 --aws-access-key-id <your_access_key> --aws-secret-access-key <your_secret_key> --no-prompt
+
 ![Uploading image.png…]()
 
 
-
-
-Step 9:
 
 
