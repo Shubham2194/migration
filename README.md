@@ -50,7 +50,14 @@ Step 8:
 Now go to IAM and create IAM user with access key and secret access key
 (Attach permission : AWSApplicationMigrationAgentinstallationPolicy)
 
+<img width="1208" alt="image" src="https://github.com/user-attachments/assets/d35b1c3e-18e7-4e04-88b0-4e8a3db05ca6" />
+
+Step 9:
+Once create go to AWS migration and add access secret keys
+
 ![Uploading image.png…]()
+
+
 
 
 Step 9:
