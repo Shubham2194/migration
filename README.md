@@ -96,12 +96,28 @@ After sometime we can see data transfer begins :)
 
 
 Step 13:
-Once data transfer is done , Check in snapshot in ec2 console 
+Once data transfer is done , Check in snapshot in ec2 console using which Volumes will be created
 
 <img width="1369" alt="image" src="https://github.com/user-attachments/assets/1e18858b-bdbb-49e1-9ba1-c0c80ef5472d" />
 
 
 <img width="1306" alt="image" src="https://github.com/user-attachments/assets/e144a381-7459-40cd-89ea-9dcbbc0cb45f" />
+
+Step 14:
+Once you see Initial replication finished
+
+<img width="1667" alt="image" src="https://github.com/user-attachments/assets/a1acc6d3-4371-4247-8168-9fa994dae091" />
+
+Step 15:
+Now click on test and cutover , it will create a test server 
+
+<img width="1397" alt="image" src="https://github.com/user-attachments/assets/5e7e3854-45cf-4e81-8762-d1ceaaca0319" />
+
+Step 16:
+
+
+
+
 
 
 
