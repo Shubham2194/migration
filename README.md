@@ -51,6 +51,9 @@ Now go to IAM and create IAM user with access key and secret access key
 (Attach permission : AWSApplicationMigrationAgentinstallationPolicy)
 
 
+<img width="1392" alt="image" src="https://github.com/user-attachments/assets/4b13ec2f-1cba-4d1c-8183-ad478d1303d5" />
+
+
 
 Step 9:
 Once create go to AWS migration and add access secret keys
@@ -67,4 +70,11 @@ sudo chmod +x aws-replication-installer-init; sudo ./aws-replication-installer-i
 
 
 <img width="1667" alt="image" src="https://github.com/user-attachments/assets/c3c527c0-df5d-4c40-bf59-f3eebe8aee27" />
+
+Step 11:
+Once you run the agent , it will fetch all the storage, os etc from VM and create a migration server on AWS
+
+<img width="1036" alt="image" src="https://github.com/user-attachments/assets/ae36a526-9c6e-4309-b3cb-d22f75ce8595" />
+
+
 
