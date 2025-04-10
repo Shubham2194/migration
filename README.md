@@ -125,6 +125,27 @@ Once this is terminated go to AWS mgn and click on Launch cutover instance. (thi
 
 <img width="1384" alt="image" src="https://github.com/user-attachments/assets/0299e396-0aed-4293-bffa-4175c790ac87" />
 
+Step 18:
+Go to Elastic IP section , Create and associate it to our VM. (check the status on mgn svc)
+
+<img width="1333" alt="image" src="https://github.com/user-attachments/assets/3fb582e8-8ad4-429c-a465-37a9f30c994d" />
+
+
+<img width="1446" alt="image" src="https://github.com/user-attachments/assets/d7f354b3-40e9-42f9-aaf9-547515d2ccf9" />
+
+Step 19:
+Check we have public IP now.
+
+<img width="872" alt="image" src="https://github.com/user-attachments/assets/9f8819ac-94d9-4e4e-a0ee-a35f5db2db4e" />
+
+Step 20:
+
+SSH to it
+
+
+
+
+
 
 
 
