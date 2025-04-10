@@ -74,7 +74,25 @@ sudo chmod +x aws-replication-installer-init; sudo ./aws-replication-installer-i
 Step 11:
 Once you run the agent , it will fetch all the storage, os etc from VM and create a migration server on AWS
 
-<img width="1036" alt="image" src="https://github.com/user-attachments/assets/ae36a526-9c6e-4309-b3cb-d22f75ce8595" />
+<img width="1029" alt="image" src="https://github.com/user-attachments/assets/967c1916-a6d6-4c07-84d7-615d665074b4" />
+
+Step 12:
+Go to source servers user Aws Migration service you see you replication details.
+
+<img width="1560" alt="image" src="https://github.com/user-attachments/assets/19165d79-c023-4e19-bd68-0ffd2dd9d7fa" />
+
+Step 13:
+Jump to ec2 service to cross verify
+
+<img width="1220" alt="image" src="https://github.com/user-attachments/assets/bb842d3e-4b98-4d3e-ad20-e352361e95c4" />
+
+
+
+After sometime we can see data transfer begins :)
+
+<img width="1437" alt="image" src="https://github.com/user-attachments/assets/b65da1ae-9f85-4d51-b74a-ba55402d28ae" />
+
+
 
 
 
