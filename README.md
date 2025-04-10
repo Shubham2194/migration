@@ -1,5 +1,4 @@
 ###### Migration of GCP VM to AWS using AWS Migration Service ###################################################
-###########################################################################################################
 
 <img width="761" alt="image" src="https://github.com/user-attachments/assets/dffdb4ae-00b9-495a-935a-cf61f7b8e322" />
 
