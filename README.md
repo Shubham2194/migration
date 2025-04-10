@@ -119,7 +119,7 @@ Once you are sure , click on (Mark as Ready for Cutover) - this will remove test
 <img width="1382" alt="image" src="https://github.com/user-attachments/assets/a6efd78f-6cea-454a-a189-fe27042a8bcf" />
 
 Step 17:
-Once this is terminated go to AWS mgn and click on Launch cutover instance. (this will again launch a server and we can test that, this time let's attach eip to this server and SSH to it)
+Once this is terminated go to AWS mgn and click on Launch cutover instance. (this will again launch a server with the same name and we can test that, this time let's attach eip to this server and SSH to it)
 
 <img width="1409" alt="image" src="https://github.com/user-attachments/assets/242e0247-91d3-4d60-8cf3-26d3311371a4" />
 
