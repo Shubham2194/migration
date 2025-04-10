@@ -46,4 +46,10 @@ Check Post-launch template  and enable Install the Systems Manager agent and all
 <img width="1581" alt="image" src="https://github.com/user-attachments/assets/9538f36a-7df2-4247-8097-f644756ed168" />
 
 
+Step 8:
+Now go to IAM and create IAM user with access key and secret access key
+(Attach permission : AWSApplicationMigrationAgentinstallationPolicy)
+
+Step 9:
+
 
