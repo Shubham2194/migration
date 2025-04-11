@@ -166,7 +166,7 @@ This will do the following :
 
 The Staging Area Replication Server
 
-<img width="1395" alt="image" src="https://github.com/user-attachments/assets/7647dca7-9def-41a0-8ff9-3e4ca42b331a" />
+<img width="1368" alt="image" src="https://github.com/user-attachments/assets/5d6c2213-d6c6-485e-b7e2-58fe69346113" />
 
 
 
