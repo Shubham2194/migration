@@ -168,9 +168,13 @@ The Staging Area Replication Server
 
 <img width="1368" alt="image" src="https://github.com/user-attachments/assets/5d6c2213-d6c6-485e-b7e2-58fe69346113" />
 
+Step 23:
+Once you click on Finalize cutover , it disconnects from source
 
+<img width="1349" alt="image" src="https://github.com/user-attachments/assets/29964858-54fd-46cc-9d25-9908b998240a" />
 
-
+Wallah we are done !!!!
+Hope This Helps
 
 
 
