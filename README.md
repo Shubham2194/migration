@@ -1,5 +1,5 @@
 ###### Migration of GCP VM to AWS using AWS Migration Service ###################################################
-
+(I am migrating my Jenkins VM)
 <img width="761" alt="image" src="https://github.com/user-attachments/assets/dffdb4ae-00b9-495a-935a-cf61f7b8e322" />
 
 
@@ -140,9 +140,33 @@ Check we have public IP now.
 
 Step 20:
 
-SSH to it
+SSH to it , got to ec2 console and take Public IP.
+ssh -i <SSH Private Key Path> user@<IP> (use the same user using which you are using to SSH in GCP VM)
 
 
+
+<img width="773" alt="image" src="https://github.com/user-attachments/assets/bf4fc421-5646-4061-a890-d21400d743b8" />
+
+Step 21:
+Check if everything is here in the ec2 (i am migrating Jenkins , validated its there )
+
+<img width="1563" alt="image" src="https://github.com/user-attachments/assets/be3cda2c-d897-404b-8d15-9d04c37692ee" />
+
+<img width="1583" alt="image" src="https://github.com/user-attachments/assets/bc380528-5102-4c3b-9cc0-b074720bd84d" />
+
+Step 22:
+After cross checking thorougly, Go back to AWS migration svc and choose finalize cutover
+This will do the following :
+
+✅ Disconnects the source server (closes connection from Jenkins VM) from AWS MGN — replication stops.
+
+✅ Marks the migration as complete in the AWS MGN console.
+
+✅ Cleans up temporary replication resources like:
+
+The Staging Area Replication Server
+
+<img width="1395" alt="image" src="https://github.com/user-attachments/assets/7647dca7-9def-41a0-8ff9-3e4ca42b331a" />
 
 
 
