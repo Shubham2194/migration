@@ -55,7 +55,9 @@ Check Post-launch template  and enable Install the Systems Manager agent and all
 Step 7:
 Now go to IAM and create IAM user with access key and secret access key and attach below policy
 
-``` AWSApplicationMigrationAgentinstallationPolicy ```
+``` 
+AWSApplicationMigrationAgentinstallationPolicy
+```
 
 
 <img width="1392" alt="image" src="https://github.com/user-attachments/assets/4b13ec2f-1cba-4d1c-8183-ad478d1303d5" />
@@ -71,9 +73,13 @@ Once create go to AWS migration and add access secret keys
 Step 9:
 Now we need to run the below commands one by one in GCP VM
 
-``` sudo wget -O ./aws-replication-installer-init https://aws-application-migration-service-ap-southeast-1.s3.ap-southeast-1.amazonaws.com/latest/linux/aws-replication-installer-init ```
+``` 
+sudo wget -O ./aws-replication-installer-init https://aws-application-migration-service-ap-southeast-1.s3.ap-southeast-1.amazonaws.com/latest/linux/aws-replication-installer-init
+```
 
-``` sudo chmod +x aws-replication-installer-init; sudo ./aws-replication-installer-init --region ap-southeast-1 --aws-access-key-id <your_access_key> --aws-secret-access-key <your_secret_key> --no-prompt ```
+``` 
+sudo chmod +x aws-replication-installer-init; sudo ./aws-replication-installer-init --region ap-southeast-1 --aws-access-key-id <your_access_key> --aws-secret-access-key <your_secret_key> --no-prompt
+```
 
 
 
@@ -148,7 +154,10 @@ Step 20:
 
 SSH to it , got to ec2 console and take Public IP.
 
-``` ssh -i <SSH Private Key Path> user@<IP> ```
+``` 
+ssh -i <SSH Private Key Path> user@<IP>
+```
+
 (use the same user which you are using to SSH in GCP VM)
 
 
