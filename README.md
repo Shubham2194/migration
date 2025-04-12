@@ -4,7 +4,9 @@
 
 
 Step 1:
-Create ssh keys Public key and Private key on your local(using putty gen , ssh-keygen)
+🔧 Step 1: Set up MGN in AWS
+
+Configure replication settings, launch settings, and default EC2 subnet/Security Groups > Create ssh keys Public key and Private key on your local(using putty gen , ssh-keygen)
 
 
 Step 2:
@@ -48,7 +50,6 @@ Check Post-launch template  and enable Install the Systems Manager agent and all
 
 (i have disabled it as i will access it with SSH using Public key)
 
-
 <img width="1581" alt="image" src="https://github.com/user-attachments/assets/9538f36a-7df2-4247-8097-f644756ed168" />
 
 
@@ -80,6 +81,7 @@ sudo wget -O ./aws-replication-installer-init https://aws-application-migration-
 ``` 
 sudo chmod +x aws-replication-installer-init; sudo ./aws-replication-installer-init --region ap-southeast-1 --aws-access-key-id <your_access_key> --aws-secret-access-key <your_secret_key> --no-prompt
 ```
+
 
 
 
@@ -190,7 +192,7 @@ Once you click on Finalize cutover , it disconnects from source
 
 <img width="1349" alt="image" src="https://github.com/user-attachments/assets/29964858-54fd-46cc-9d25-9908b998240a" />
 
-Wallah we are done !!!!
+✅ Wallah we are done !!!!
 Hope This Helps
 
 
