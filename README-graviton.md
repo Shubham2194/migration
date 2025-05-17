@@ -248,3 +248,18 @@ spec:
 ```
 kubectl apply -f argocd.yaml
 ```
+
+STEP 13: Now let's check logs and see if pos scheduled to Graviton node
+
+(graviton node)
+
+<img width="772" alt="image" src="https://github.com/user-attachments/assets/c90716f7-cade-453f-8d71-ed0fce457f23" />
+
+<img width="789" alt="image" src="https://github.com/user-attachments/assets/8f057c1f-2f89-43e8-93c4-ea11e85723fa" />
+
+
+🚀✨ Finally! We are able to successfully migrate and deploy our container to Graviton nodes 💪🎉
+
+⚡️ These ARM-based instances are cost-efficient 💸 and deliver better performance 🔥 compared to traditional x86-based nodes.
+
+🌱 A solid step toward optimized, scalable, and sustainable infrastructure! 🛠️🌍
