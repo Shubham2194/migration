@@ -117,8 +117,9 @@ docker buildx ls
 as we can see platforms linux/amd64 (+4) and linux/386
 <img width="974" alt="image" src="https://github.com/user-attachments/assets/1c3bd201-2582-4a60-86d0-54d26be51cfc" />
 
+STEP 9 : Deploy ARM64 compatible docker container as pod on EKS 
 
-STEP 9 : Deploy ARM64 compatible docker container as pod on EKS
+NOTE: Make sure you have graviton nodegroup added to your cluster
 
 Dockerfile:
 (i am deploying python fast API)
@@ -141,5 +142,11 @@ COPY . /code
 CMD ["python", "main.py"]
 ```
 
-STEP 10: Let's build Dockerfile from Jenkins
+STEP 10: Let's build Dockerfile from Jenkins, made small change in build stage of Jenkins:
+
+(if you are using local , just run below command)
+```
+docker buildx build --platform linux/arm64 -f Dockerfile_graviton .
+```
+
 
