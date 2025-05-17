@@ -214,5 +214,37 @@ spec:
             - containerPort: 5000
       imagePullSecrets:
       - name: ecr-private-image-secret
-      ```
+```
 
+STEP 12: Deploy in EKS
+(If you are using ArgoCD within Cluster to deploy your pod like me use below , either just run : kubectl apply -f deployment.yaml)
+
+(i have artifacts Github where i have graviton directory in which i have my manifest files.)
+```
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: graviton
+  namespace: argocd
+spec:
+  destination:
+    name: in-cluster
+    namespace: backend  
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    repoURL: 'https://github.com/tlabsai/artifacts.git'
+    path: graviton
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: backend
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+```
+
+```
+kubectl apply -f argocd.yaml
+```
