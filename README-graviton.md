@@ -1,7 +1,12 @@
-Docker images Compatible with multiple CPU architectures  i.e intel,linux/amd64 and linux/arm64
+<img width="783" alt="image" src="https://github.com/user-attachments/assets/93cd139f-7bd8-4902-857a-20af2318c4e9" />
 
-According to Docker official Documents Docker supports building container images targeting multiple platforms, here we are going to create a docker image which supports
+Here we are going to create a docker image which supports
 multiple platforms i.e intel,linux/amd64 and linux/arm64.
+
+Docker images are Compatible with multiple CPU architectures  i.e intel,linux/amd64 and linux/arm64
+According to Docker official Documents Docker supports building container images targeting multiple platforms.
+
+
 
 STEP 1: Make sure you are using Docker >= 20.10
 ```
