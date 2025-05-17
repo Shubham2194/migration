@@ -8,7 +8,10 @@ STEP 1: Make sure you are using Docker >= 20.10
 docker version
 ```
 
+
 <img width="656" alt="image" src="https://github.com/user-attachments/assets/1d520b01-d64d-4906-bf7a-193adfd41e10" />
+
+
 
 (i have Docker version 20.10.5+dfsg1, build 55c4c88, The +dfsg1 indicates Debian-distributed version of Docker, which is known to disable some features, including CLI plugins like buildx)
 
@@ -31,7 +34,8 @@ sudo rm -r ~/.docker
 
 STEP 3: Set up Docker's apt repository 
 
-ubuntu :
+For Ubuntu :
+
 ```
 # Add Docker's official GPG key:
 sudo apt-get update
@@ -47,7 +51,9 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 ```
-debian:
+
+For Debian:
+
 ```
 # Add Docker's official GPG key:
 sudo apt-get update
@@ -64,11 +70,13 @@ echo \
 sudo apt-get update
 ```
 
+
 STEP 4: Install docker 
 
 ```
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
+
 <img width="1556" alt="image" src="https://github.com/user-attachments/assets/a5d27f0b-f8bc-49b9-9482-230af26bdbf4" />
 
 STEP 5: docker version 
