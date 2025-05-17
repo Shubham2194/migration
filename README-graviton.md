@@ -151,7 +151,11 @@ STEP 10: Let's build Dockerfile from Jenkins, made small change in build stage o
 
 (if you are using local , just run below command)
 ```
-docker buildx build --platform linux/arm64 -f Dockerfile_graviton .
+docker buildx build --platform linux/arm64 -f Dockerfile_graviton . --load
 ```
+--load flag will :
 
+🔹 Builds the image
+🔹 Tags it
+✅ Loads it into the local Docker engine so you can use docker tag and docker push manually
 
