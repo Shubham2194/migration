@@ -85,7 +85,61 @@ STEP 5: docker version
 docker version
 ```
 
-<img width="1532" alt="image" src="https://github.com/user-attachments/assets/11fe7541-9482-4883-a083-95e238e17261" />
+<img width="1674" alt="image" src="https://github.com/user-attachments/assets/0895ca0e-8163-4a07-a18a-3c889964bd2e" />
 
 
-STEP 6: 
+STEP 6: Fix permission denied issue
+
+```
+# Add current user to docker group
+newgrp docker
+sudo usermod -aG docker $USER
+sudo usermod -aG docker jenkins
+sudo systemctl restart docker
+sudo systemctl restart jenkins
+
+```
+
+STEP 7: These should now work without sudo 
+
+```
+docker ps
+docker buildx version
+```
+<img width="1048" alt="image" src="https://github.com/user-attachments/assets/fc2ee811-c07e-4450-a9e8-c4c157d3f4d2" />
+
+
+STEP 8: Try running buildx command
+```
+docker buildx ls
+```
+
+as we can see platforms linux/amd64 (+4) and linux/386
+<img width="974" alt="image" src="https://github.com/user-attachments/assets/1c3bd201-2582-4a60-86d0-54d26be51cfc" />
+
+
+STEP 9 : Deploy ARM64 compatible docker container as pod on EKS
+
+Dockerfile:
+(i am deploying python fast API)
+
+```
+FROM python:3.11-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /code
+
+COPY source_requirements.txt /code/
+RUN pip3 install --no-cache-dir -r source_requirements.txt
+
+COPY . /code
+
+CMD ["python", "main.py"]
+```
+
+STEP 10: Let's build Dockerfile from Jenkins
+
