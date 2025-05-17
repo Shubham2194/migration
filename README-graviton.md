@@ -190,7 +190,7 @@ spec:
         app: graviton
     spec:
       serviceAccountName: dev
-            affinity:
+      affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
