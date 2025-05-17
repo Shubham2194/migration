@@ -249,7 +249,7 @@ spec:
 kubectl apply -f argocd.yaml
 ```
 
-STEP 13: Now let's check logs and see if pos scheduled to Graviton node
+STEP 13: Now let's check logs and see if pod scheduled to Graviton node
 
 (graviton node)
 
