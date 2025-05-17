@@ -124,7 +124,7 @@ as we can see platforms linux/amd64 (+4) and linux/386
 
 STEP 9 : Deploy ARM64 compatible docker container as pod on EKS 
 
-NOTE: Make sure you have graviton nodegroup added to your cluster
+NOTE: Make sure you have graviton nodegroup added to your cluster and add Label to the node as name = "graviton"
 
 Dockerfile:
 (i am deploying python fast API)
@@ -149,13 +149,70 @@ CMD ["python", "main.py"]
 
 STEP 10: Let's build Dockerfile from Jenkins, made small change in build stage of Jenkins:
 
-(if you are using local , just run below command)
+(if you are using local , just run below command to build and tag it )
 ```
 docker buildx build --platform linux/arm64 -f Dockerfile_graviton . --load
 ```
+
 --load flag will :
 
 🔹 Builds the image
+
 🔹 Tags it
+
 ✅ Loads it into the local Docker engine so you can use docker tag and docker push manually
+
+STEP 11: Once you are able to create build lets use the same Image and add Affinity to schedule pod to graviton node
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: graviton
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: graviton
+  template:
+    metadata:
+      annotations:
+        vault.hashicorp.com/agent-inject: "true"
+        vault.hashicorp.com/role: "dev"
+        vault.hashicorp.com/agent-inject-secret-secrets.env: "dev/data/secret"
+        vault.hashicorp.com/agent-inject-template-secrets.env: |
+          {{- with secret "dev/data/secret" -}}
+          {{- range $k, $v := .Data.data }}
+          export {{ $k }}="{{ $v }}"
+          {{- end }}
+          {{- end }}      
+      labels:
+        app: graviton
+    spec:
+      serviceAccountName: dev
+            affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: name
+                    operator: In
+                    values:
+                      - graviton
+      containers:
+        - name: graviton
+          image: <Graviton docker Image>
+          resource-gravitons: 
+            requests:
+              memory: 1Gi
+              cpu: "0.1"
+            limits:
+              memory: 2Gi
+              cpu: "0.5"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+      imagePullSecrets:
+      - name: ecr-private-image-secret
+      ```
 
