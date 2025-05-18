@@ -239,6 +239,22 @@ spec:
             - containerPort: 5000
       imagePullSecrets:
       - name: ecr-private-image-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app:  graviton
+  name: graviton
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: graviton
+  type: ClusterIP
 ```
 
 STEP 12: Deploy in EKS
@@ -268,22 +284,7 @@ spec:
     automated:
       prune: true
       selfHeal: false
----
-apiVersion: v1
-kind: Service
-metadata:
-  creationTimestamp: null
-  labels:
-    app:  graviton
-  name: graviton
-spec:
-  ports:
-  - port: 80
-    protocol: TCP
-    targetPort: 5000
-  selector:
-    app: graviton
-  type: ClusterIP
+
 ```
 
 ```
