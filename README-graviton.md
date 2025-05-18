@@ -124,7 +124,7 @@ docker buildx ls
 as we can see platforms linux/amd64 (+4) and linux/386
 <img width="974" alt="image" src="https://github.com/user-attachments/assets/1c3bd201-2582-4a60-86d0-54d26be51cfc" />
 
-STEP 9 : Deploy ARM64 compatible docker container as pod on EKS 
+STEP 9 : Create ARM64 compatible docker image and deploy as pod on EKS 
 
 NOTE: Make sure you have graviton nodegroup added to your cluster and add Label to the node as name = "graviton"
 
@@ -152,6 +152,7 @@ CMD ["python", "main.py"]
 STEP 10: Let's build Dockerfile from Jenkins, made small change in build stage of Jenkins:
 
 (if you are using local , just run below command to build and tag it )
+
 ```
 docker buildx build --platform linux/arm64 -f Dockerfile_graviton . --load
 ```
@@ -164,7 +165,7 @@ docker buildx build --platform linux/arm64 -f Dockerfile_graviton . --load
 
 ✅ Loads it into the local Docker engine so you can use docker tag and docker push manually
 
-for jenkins add below in your build stage: 
+For jenkins add below in your build stage: 
 
 ```
 docker buildx create --use || true
@@ -176,6 +177,11 @@ docker buildx build \
   --cache-to=type=registry,ref=${REPOSITORY_URI}:buildcache,mode=max \
   --push .
 ```
+🔹 Builds the image
+
+🔹 Tags it
+
+✅ Push it to ECR
 
 i have below ennvironment variables in jenkinsfile:
 
