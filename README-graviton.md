@@ -1,14 +1,15 @@
 <img width="783" alt="image" src="https://github.com/user-attachments/assets/93cd139f-7bd8-4902-857a-20af2318c4e9" />
 
 Here we are going to create a docker image which supports
-multiple platforms i.e intel,linux/amd64 and linux/arm64.
+multiple platforms i.e linux/amd64 and linux/arm64.
 
-Docker images are Compatible with multiple CPU architectures  i.e intel,linux/amd64 and linux/arm64
-According to Docker official Documents Docker supports building container images targeting multiple platforms.
+According to Docker official Documents Docker supports building container images targeting multiple platforms,
+Docker images are Compatible with multiple CPU architectures.
 
 
+Let's START >>> 🚀🚀🚀🚀🚀🚀🚀
 
-STEP 1: Make sure you are using Docker >= 20.10
+STEP 1: Make sure you are using Docker >= 20.10, fire below command to check version.
 ```
 docker version
 ```
@@ -37,7 +38,7 @@ sudo rm -rf /var/lib/containerd
 sudo rm -r ~/.docker
 ```
 
-STEP 3: Set up Docker's apt repository 
+STEP 3: Setup Docker's apt repository 
 
 For Ubuntu :
 
@@ -115,6 +116,7 @@ docker buildx version
 
 
 STEP 8: Try running buildx command
+
 ```
 docker buildx ls
 ```
@@ -162,7 +164,30 @@ docker buildx build --platform linux/arm64 -f Dockerfile_graviton . --load
 
 ✅ Loads it into the local Docker engine so you can use docker tag and docker push manually
 
-STEP 11: Once you are able to create build lets use the same Image and add Affinity to schedule pod to graviton node
+for jenkins add below in your build stage: 
+
+```
+docker buildx create --use || true
+docker buildx build \
+  --platform linux/arm64 \
+  --file Dockerfile_source \
+  --tag ${REPOSITORY_URI}:${IMAGE_TAG} \
+  --cache-from=type=registry,ref=${REPOSITORY_URI}:buildcache \
+  --cache-to=type=registry,ref=${REPOSITORY_URI}:buildcache,mode=max \
+  --push .
+```
+
+i have below ennvironment variables in jenkinsfile:
+
+```
+IMAGE_REPO_NAME="<your ecr registry name>"
+AWS_DEFAULT_REGION="<your aws region>"
+REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
+IMAGE_TAG = "1.${env.BUILD_NUMBER}-${PIPELINE_NAME}"
+```
+
+STEP 11: Once you are able to create build lets use the same Image and add Affinity to schedule pod to graviton node.
+(remove vault annotation if you are using kubernetes secrets and change containerPort accordingly)
 
 ```
 apiVersion: apps/v1
@@ -243,6 +268,22 @@ spec:
     automated:
       prune: true
       selfHeal: false
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app:  graviton
+  name: graviton
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: graviton
+  type: ClusterIP
 ```
 
 ```
